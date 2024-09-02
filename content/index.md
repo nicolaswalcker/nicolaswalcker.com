@@ -1,7 +1,3 @@
----
-description: 'meta description of the page'
----
-
 **olá**
 
 sou um desenvolvedor frontend que mora e trabalha no Brasil. Gosto muito de desenvolver coisas novas e diferentes. Também gosto muito de interfaces limpas e fluídas, como pode perceber.

@@ -12,6 +12,6 @@ useSeoMeta({
 
 <template>
   <section class="prose">
-    <ContentDoc path="/articles" />
+    <ContentDoc :head="false" path="/articles" />
   </section>
 </template>

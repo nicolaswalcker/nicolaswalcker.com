@@ -13,6 +13,6 @@ useSeoMeta({
 
 <template>
   <article class="prose">
-    <ContentDoc path="/" />
+    <ContentDoc :head="false" path="/" />
   </article>
 </template>
