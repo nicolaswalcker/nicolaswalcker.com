@@ -1,0 +1,12 @@
+@import url('https://api.fontshare.com/v2/css?f[]=zodiak@400,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body,
+#__nuxt {
+  @apply w-full h-full scroll-smooth min-h-screen bg-amber-50 text-gray-800;
+}
