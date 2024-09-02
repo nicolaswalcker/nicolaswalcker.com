@@ -46,5 +46,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
     '@nuxtjs/seo',
+    '@nuxt/image',
   ],
 })
