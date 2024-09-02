@@ -48,4 +48,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/image',
   ],
+  build: {
+    transpile: ['shiki'],
+  },
 })
