@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { data } = await useAsyncData('articles', () =>
-  queryContent('/articles').only(['_path', 'title', 'publishedAt']).where({ _path: { $ne: '/articles' } }).sort({ publishedAt: -1 }).find())
+  queryContent('/articles').only(['_path', 'title', 'publishedAt']).where({ _path: { $ne: '/articles', $not: '/articles/template' } }).sort({ publishedAt: -1 }).find())
 
 const articles = computed(() => {
   if (!data.value)

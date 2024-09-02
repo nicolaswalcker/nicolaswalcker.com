@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-
+// defineOgImage({
+//   component: 'ArticleOgImage',
+// })
 </script>
 
 <template>
