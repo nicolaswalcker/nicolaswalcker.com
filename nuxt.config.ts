@@ -7,6 +7,11 @@ export default defineNuxtConfig({
   css: ['@/assets/css/fonts.css'],
   runtimeConfig: {
     resendKey: process.env.RESEND_API_KEY,
+    public: {
+      siteName: 'nicolaswalcker.com',
+      siteUrl: process.env.SITE_URL,
+      siteDescription: 'Blog pessoal de Nicolas Walcker',
+    },
   },
   content: {
     highlight: {

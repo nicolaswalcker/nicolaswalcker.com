@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const config = useRuntimeConfig()
 const links = ref([
   {
     href: 'https://www.instagram.com/nicaaaaoo/',
@@ -19,6 +20,11 @@ const links = ref([
   {
     href: 'http://notes.nicolaswalcker.com/',
     icon: 'lucide:notebook-tabs',
+  },
+  {
+    href: `${config.public.siteUrl}/rss.xml`,
+    icon: 'lucide:rss',
+    external: false,
   },
 ])
 
@@ -55,7 +61,7 @@ useSeoMeta({
     </main>
     <footer class="flex w-full items-center justify-start py-3">
       <div class="flex items-center gap-3">
-        <SocialButton v-for="link in links" :key="link.href" :href="link.href" :icon="link.icon" />
+        <SocialButton v-for="link in links" :key="link.href" :external="link.external" :href="link.href" :icon="link.icon" />
       </div>
     </footer>
   </div>
