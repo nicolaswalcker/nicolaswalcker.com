@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <div class="flex w-full flex-col items-start justify-center bg-amber-50 text-gray-950">
-    <div class="mx-auto flex flex-col items-start gap-2">
+    <div class="mx-auto flex w-4/5 flex-col items-start gap-4">
       <h2>Confira esse artigo!</h2>
       <h1 class="m-0 text-6xl">
         {{ props.title }}
