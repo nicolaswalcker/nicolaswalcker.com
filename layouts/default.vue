@@ -49,7 +49,7 @@ useSeoMeta({
       </NuxtLink>
       <nav class="flex gap-3">
         <NuxtLink to="/articles" class="underline transition-transform active:scale-95">
-          Artigos
+          Blog
         </NuxtLink>
         <NuxtLink to="/contact" class="underline transition-transform active:scale-95">
           Contato
