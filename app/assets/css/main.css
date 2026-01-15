@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans: 'Zodiak', serif;
+}
+
+
+html,
+body,
+#__nuxt {
+  @apply w-full h-full scroll-smooth min-h-screen bg-amber-50 text-gray-800;
+}
+
+.prose pre {
+  @apply bg-amber-100/35 border border-amber-200/40;
+}
