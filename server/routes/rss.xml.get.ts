@@ -1,38 +1,34 @@
-import { serverQueryContent } from '#content/server'
+import { defineEventHandler, setResponseHeader } from 'h3'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
-  const docs = await serverQueryContent(event)
-    .where({
-      _path: { $regex: '^/articles/' }, // Inclui apenas artigos na pasta 'articles'
-      $and: [
-        { _path: { $ne: '/articles' } }, // Exclui o index da pasta articles
-        { _path: { $ne: '/articles/template' } }, // Exclui o template
-      ],
-    })
-    .find()
 
-  const feed = `<?xml version="1.0" encoding="UTF-8" ?>
+  const docs = await queryCollection(event, 'posts')
+    .where('draft', 'IS NULL', false)
+    .order('date', 'DESC')
+    .select('title', 'path', 'date', 'description')
+    .all()
+  const feedString = `<?xml version="1.0" encoding="UTF-8" ?>
     <rss version="2.0">
       <channel>
-        <title>${config.public.siteName}</title>
+        <title>Nicolas Walcker</title>
         <link>${config.public.siteUrl}</link>
-        <description>${config.public.siteDescription}</description>
-        ${docs
-    .map((doc) => {
-      // Verifica se o _path começa com '/', e remove se necessário
-      const linkPath = doc._path?.startsWith('/') ? doc._path.slice(1) : doc._path
-      return `<item>
-              <title>${doc.title}</title>
+        <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+        ${docs.map((doc: any) => {
+          const linkPath = doc.path.startsWith('/') ? doc.path.slice(1) : doc.path
+
+          return `<item>
+              <title><![CDATA[${doc.title}]]></title>
               <link>${config.public.siteUrl}/${linkPath}</link>
-              <pubDate>${new Date(doc.publishedAt).toUTCString()}</pubDate>
-              <description>${doc.description}</description>
+              <guid>${config.public.siteUrl}/${linkPath}</guid>
+              <pubDate>${new Date(doc.date).toUTCString()}</pubDate>
+              <description><![CDATA[${doc.description}]]></description>
             </item>`
-    })
-    .join('')}
+        }).join('')}
       </channel>
     </rss>`
 
-  event.node.res.setHeader('Content-Type', 'application/xml')
-  return feed
+  setResponseHeader(event, 'Content-Type', 'application/xml')
+
+  return feedString
 })
