@@ -1,12 +1,8 @@
 ---
 title: Por que um "blog"?
-description: Por que um blog, porque um portfolio, por que?
+description: Por que um blog, por que um portfolio, por que?
 date: 09-04-2024 00:14:00
-category: code
-readTime: 6 min de leitura
 ---
-
-:OgImage{component="ArticleOgImage" category="code"}
 
 Acho que a primeira pergunta quando a gente ta fazendo um blog nosso, é o _por que_ estar fazendo isso.
 Temos tantos serviços melhores por aí, tem o [dev.to](), tem o [medium](), tem o [hashnode]() e por aí vai.
@@ -36,4 +32,3 @@ Por fim, ter um espaço meu. Não estar a mercê de uma plataforma X ou Y, onde 
 
 Acho que deu para entender um pouco do por que eu fiz esse site com essa seção.
 Sempre tem espaço para melhora, ainda pretendo melhorar aqui de algumas maneiras.
-Caso tenha alguma sugestão, fique a vontade para entrar em [contato](/contact) comigo.

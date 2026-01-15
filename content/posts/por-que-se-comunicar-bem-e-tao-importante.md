@@ -2,12 +2,7 @@
 title: Por que se comunicar bem é tão importante?
 description: Vamos discutir e refletir um pouco sobre comunicação assíncrona bem feita é muito benéfica.
 date: 12-09-2024
-category: softskills
-navigation: true
-readTime: 6 min de leitura
 ---
-
-:OgImage{component="ArticleOgImage" category="softskills"}
 
 ::highlight
 Primeiro eu gostaria de fazer uma pequena menção nesta postagem. Ela só existe porque eu li algo sobre comunicação e comportamento [aqui](https://www.alvseven.com/como-eu-escolhi-lidar-com-pessoas) e eu recomendo muito que você também leia, é um texto muito bom!

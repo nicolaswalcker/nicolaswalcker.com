@@ -4,14 +4,18 @@ const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () =>
   queryCollection('posts').path(route.path).first())
 
-function formatDate(date: string | undefined) {
-  if (!date)
-    return ''
-  const dateObj = new Date(date)
-  return dateObj.toLocaleDateString('pt-BR', {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
+if (page?.value) {
+  defineOgImageComponent('BlogPost', {
+    title: page?.value.title,
+    description: page?.value.description,
+    date: page?.value.date,
+  })
+
+  useSeoMeta({
+    title: page?.value.title,
+    description: page?.value.description,
+    ogTitle: page?.value.title,
+    ogDescription: page?.value.description,
   })
 }
 </script>

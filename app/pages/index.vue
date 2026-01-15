@@ -10,11 +10,13 @@ if (!page.value) {
 }
 
 useSeoMeta({
-  title: page.value?.seo.title || page.value?.title,
-  ogTitle: page.value?.seo?.title || page.value?.title,
-  description: page.value?.seo.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description,
+  title: 'Nicolas Walcker',
+  ogTitle: 'Nicolas Walcker',
+  description: 'Sou um desenvolvedor frontend que mora e trabalha no Brasil. Gosto muito de desenvolver coisas novas e diferentes.',
+  ogDescription: 'Sou um desenvolvedor frontend que mora e trabalha no Brasil. Gosto muito de desenvolver coisas novas e diferentes.',
 })
+
+defineOgImageComponent('Main')
 </script>
 
 <template>

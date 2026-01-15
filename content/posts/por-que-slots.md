@@ -2,11 +2,7 @@
 title: Por que slots?
 description: Neste texto nós vamos falar entender um pouco sobre como slots podem contribuir para a criação de componentes mais genéricos e escaláveis.
 date: 11-11-2024 09:50:00
-readTime: 6 min de leitura
 ---
-
-:OgImage{component="ArticleOgImage"}
-
 ## O problema
 
 No desenvolvimento web moderno, a criação de interfaces teve um grande avanço com relação a organização e desenvolvimento das nossas aplicações. Um desses avanços e talvez um dos mais conhecidos é a famosa componentização.
